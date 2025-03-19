@@ -6,7 +6,7 @@ const route = express.Router();
 
 route.put("/signup", signup);
 route.post("/login", login);
-route.get("/logout",verifytoken, logout);
+route.post("/logout",verifytoken, logout);
 route.get("/myprofile",verifytoken,getmyprofile)
 route.get("/allusers",verifytoken,isadmin("admin"),getallusers)  //admin page
 route.get("/stats",verifytoken,isadmin("admin"),stats)  //admin page 

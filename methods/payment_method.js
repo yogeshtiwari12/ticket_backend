@@ -1,11 +1,17 @@
 import { Cashfree } from "cashfree-pg";
 import Payment from "../models/payment.js";
+import dotenv from "dotenv";
+dotenv.config();
 
-// const cashfreeApiKey = "YOUR_API_KEY_HERE"; // Replace with a placeholder
 
-Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID;
+
+Cashfree.XClientId = process?.env?.CASHFREE_CLIENT_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
 Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
+
+console.log("cashfree_cid",process.env.CASHFREE_CLIENT_ID)
+console.log("secret",process.env.CASHFREE_CLIENT_SECRET)
+console.log("enviroment",Cashfree.XEnvironment)
 
 export async function createPayment(req, res) {
 
