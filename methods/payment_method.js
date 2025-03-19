@@ -9,9 +9,7 @@ Cashfree.XClientId = process?.env?.CASHFREE_CLIENT_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
 Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
 
-console.log("cashfree_cid",process.env.CASHFREE_CLIENT_ID)
-console.log("secret",process.env.CASHFREE_CLIENT_SECRET)
-console.log("enviroment",Cashfree.XEnvironment)
+
 
 export async function createPayment(req, res) {
 

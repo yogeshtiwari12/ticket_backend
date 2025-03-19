@@ -7,17 +7,14 @@ import bus_routes from "./routes/bus_routes.js";
 import train_routes from "./routes/train_routes.js";
 import booking_routes from "./routes/booking_routes.js";
 import payment_routes from "./routes/payment_routes.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const app = express();
-mongoose.connect("mongodb://localhost:27017/ticket_booking" )
-.then(() => {
-    console.log("Connected to database");
-})
-.catch(() => {
-    console.log("Connection failed");
-});
+mongoose.connect(process.env.MOGO_URI)
+  .then(() => console.log("MongoDB Connected "))
+  .catch((err) => console.log("MongoDB Connection Error ", err));
 
 app.use(express.json());
 app.use(cookieParser());
